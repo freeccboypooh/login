@@ -1,0 +1,48 @@
+Comandos usados para este proyecto
+
+composer global require laravel/installer
+
+# "login" el nombre del proyecto
+laravel new login
+
+crear la base de datos
+
+#.env configurar el nombre de la base de datos "logindb"
+
+composer require laravel/ui
+
+php artisan ui vue --auth
+
+#se crean las tablas que ya estan preconfiguradas para el manejo del login
+php artisan migrate
+
+# instalar las dependencias de javascript todas las que estan en package.json
+npm install 
+
+#SIEMPRE que trabajo uso este comando
+npm run watch
+
+#agrego esta linea a webpack mix siempre cuidando la sintaxis creando un proxi con una url con live reload 
+.browserSync('http://login.local/');
+
+#crea el modelo en la carpeta.. y -m la migracion para la DB
+php artisan make:model RolesypermisosModel/Role -m
+
+# la migracion de roles a usuario muchos a muchos sin un modelo ... tabla intermedia
+php artisan make:migration create_role_user_table
+
+# toda vez que actualizo las migraciones 
+php artisan migrate:refresh
+
+# aremos un seed para incluir datos por defecto
+php artisan make:seeder TodosSeeder
+
+# este comando borra todos los datos y corre el seed
+php artisan migrate:fresh --seed
+
+# este solo sube los datos sin borrarlos
+php artisan migrate --seed
+php artisan db:seed
+
+
+

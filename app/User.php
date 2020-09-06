@@ -36,4 +36,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    // desde aqui
+    public function roles(){
+        return $this->belongsToMany('App\RolesypermisosModel\Role')->withTimesTamps();
+    }
 }
