@@ -44,5 +44,10 @@ php artisan migrate:fresh --seed
 php artisan migrate --seed
 php artisan db:seed
 
+# el modelo debe estar en singular y la tabla estara en plural
+php artisan make:model RolesypermisosModel/Permiso -m
 
+# ahora la tabla intermedia
+php artisan make:migration create_permiso_role_table
+php artisan migrate
 
