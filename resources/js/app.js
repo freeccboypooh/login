@@ -8,6 +8,12 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 console.log('bien benidos!!!!');
+
+import VueRouter from 'vue-router'
+Vue.use(VueRouter);
+
+Vue.component('exa', require('./components/ExampleComponent.vue').default); 
+Vue.component('solomenu', require('./components/MenuComponent.vue').default); 
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -19,7 +25,7 @@ console.log('bien benidos!!!!');
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+//Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

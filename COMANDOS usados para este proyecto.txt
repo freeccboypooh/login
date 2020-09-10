@@ -34,6 +34,13 @@ php artisan make:migration create_role_user_table
 # toda vez que actualizo las migraciones 
 php artisan migrate:refresh
 
+# el modelo debe estar en singular y la tabla estara en plural
+php artisan make:model RolesypermisosModel/Permiso -m
+
+# ahora la tabla intermedia
+php artisan make:migration create_permiso_role_table
+php artisan migrate
+
 # aremos un seed para incluir datos por defecto
 php artisan make:seeder TodosSeeder
 
@@ -44,10 +51,6 @@ php artisan migrate:fresh --seed
 php artisan migrate --seed
 php artisan db:seed
 
-# el modelo debe estar en singular y la tabla estara en plural
-php artisan make:model RolesypermisosModel/Permiso -m
-
-# ahora la tabla intermedia
-php artisan make:migration create_permiso_role_table
-php artisan migrate
-
+# para evitarnos de problemas en ambiente de desarrollo 
+# se puede limpiar y empezar todo los datos denuevo
+php artisan migrate:refresh --seed 
